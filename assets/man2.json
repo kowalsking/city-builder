@@ -1,0 +1,1719 @@
+{
+  "frames": {
+    "man2/wave_down/man02_waving_down_l_00010": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 44,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 4,
+        "w": 44,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00012": {
+      "frame": {
+        "x": 47,
+        "y": 1,
+        "w": 44,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 4,
+        "w": 44,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00014": {
+      "frame": {
+        "x": 1,
+        "y": 86,
+        "w": 47,
+        "h": 83
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 4,
+        "w": 47,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00016": {
+      "frame": {
+        "x": 93,
+        "y": 1,
+        "w": 49,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 4,
+        "w": 49,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00018": {
+      "frame": {
+        "x": 1,
+        "y": 135,
+        "w": 49,
+        "h": 83
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 4,
+        "w": 49,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00020": {
+      "frame": {
+        "x": 86,
+        "y": 86,
+        "w": 45,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 4,
+        "w": 45,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00022": {
+      "frame": {
+        "x": 144,
+        "y": 1,
+        "w": 44,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 4,
+        "w": 44,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00024": {
+      "frame": {
+        "x": 133,
+        "y": 86,
+        "w": 45,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 4,
+        "w": 45,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00026": {
+      "frame": {
+        "x": 1,
+        "y": 186,
+        "w": 48,
+        "h": 83
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 4,
+        "w": 48,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00028": {
+      "frame": {
+        "x": 86,
+        "y": 171,
+        "w": 51,
+        "h": 83
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 4,
+        "w": 51,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00030": {
+      "frame": {
+        "x": 190,
+        "y": 1,
+        "w": 50,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 4,
+        "w": 50,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00012": {
+      "frame": {
+        "x": 180,
+        "y": 86,
+        "w": 41,
+        "h": 82
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 41,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00014": {
+      "frame": {
+        "x": 1,
+        "y": 236,
+        "w": 41,
+        "h": 82
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 41,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00016": {
+      "frame": {
+        "x": 85,
+        "y": 236,
+        "w": 41,
+        "h": 82
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 41,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00018": {
+      "frame": {
+        "x": 180,
+        "y": 170,
+        "w": 41,
+        "h": 82
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 41,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00020": {
+      "frame": {
+        "x": 242,
+        "y": 1,
+        "w": 41,
+        "h": 82
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 41,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00022": {
+      "frame": {
+        "x": 242,
+        "y": 85,
+        "w": 41,
+        "h": 82
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 41,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00024": {
+      "frame": {
+        "x": 223,
+        "y": 169,
+        "w": 42,
+        "h": 82
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 12,
+        "w": 42,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00026": {
+      "frame": {
+        "x": 1,
+        "y": 279,
+        "w": 42,
+        "h": 82
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 12,
+        "w": 42,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00028": {
+      "frame": {
+        "x": 85,
+        "y": 279,
+        "w": 41,
+        "h": 82
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 12,
+        "w": 41,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00008": {
+      "frame": {
+        "x": 169,
+        "y": 254,
+        "w": 44,
+        "h": 82
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 5,
+        "w": 44,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00032": {
+      "frame": {
+        "x": 285,
+        "y": 1,
+        "w": 48,
+        "h": 82
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 5,
+        "w": 48,
+        "h": 82
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00004": {
+      "frame": {
+        "x": 285,
+        "y": 85,
+        "w": 41,
+        "h": 81
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 13,
+        "w": 41,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00006": {
+      "frame": {
+        "x": 285,
+        "y": 168,
+        "w": 41,
+        "h": 81
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 13,
+        "w": 41,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00008": {
+      "frame": {
+        "x": 1,
+        "y": 323,
+        "w": 40,
+        "h": 81
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 13,
+        "w": 40,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00010": {
+      "frame": {
+        "x": 84,
+        "y": 323,
+        "w": 40,
+        "h": 81
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 13,
+        "w": 40,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00030": {
+      "frame": {
+        "x": 167,
+        "y": 322,
+        "w": 41,
+        "h": 81
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 13,
+        "w": 41,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00032": {
+      "frame": {
+        "x": 250,
+        "y": 300,
+        "w": 42,
+        "h": 81
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 13,
+        "w": 42,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00034": {
+      "frame": {
+        "x": 335,
+        "y": 1,
+        "w": 42,
+        "h": 81
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 13,
+        "w": 42,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00004": {
+      "frame": {
+        "x": 253,
+        "y": 253,
+        "w": 45,
+        "h": 81
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 12,
+        "w": 45,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00006": {
+      "frame": {
+        "x": 1,
+        "y": 365,
+        "w": 53,
+        "h": 81
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 6,
+        "w": 53,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00000": {
+      "frame": {
+        "x": 333,
+        "y": 300,
+        "w": 43,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 14,
+        "w": 43,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00002": {
+      "frame": {
+        "x": 335,
+        "y": 84,
+        "w": 42,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 14,
+        "w": 42,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00036": {
+      "frame": {
+        "x": 250,
+        "y": 344,
+        "w": 43,
+        "h": 80
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 14,
+        "w": 43,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/idle_down/man02_Iddle_down_L_00038": {
+      "frame": {
+        "x": 328,
+        "y": 166,
+        "w": 43,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 14,
+        "w": 43,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00002": {
+      "frame": {
+        "x": 84,
+        "y": 365,
+        "w": 45,
+        "h": 80
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 11,
+        "w": 45,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00006": {
+      "frame": {
+        "x": 166,
+        "y": 365,
+        "w": 46,
+        "h": 80
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 12,
+        "w": 46,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00000": {
+      "frame": {
+        "x": 379,
+        "y": 1,
+        "w": 43,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 7,
+        "w": 43,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00002": {
+      "frame": {
+        "x": 373,
+        "y": 166,
+        "w": 48,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 7,
+        "w": 48,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/wave_down/man02_waving_down_l_00004": {
+      "frame": {
+        "x": 84,
+        "y": 412,
+        "w": 56,
+        "h": 80
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 7,
+        "w": 56,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00008": {
+      "frame": {
+        "x": 1,
+        "y": 420,
+        "w": 45,
+        "h": 79
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 11,
+        "w": 45,
+        "h": 79
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00032": {
+      "frame": {
+        "x": 336,
+        "y": 248,
+        "w": 47,
+        "h": 79
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 8,
+        "w": 47,
+        "h": 79
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00000": {
+      "frame": {
+        "x": 248,
+        "y": 389,
+        "w": 46,
+        "h": 78
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 10,
+        "w": 46,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00010": {
+      "frame": {
+        "x": 379,
+        "y": 83,
+        "w": 41,
+        "h": 78
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 10,
+        "w": 41,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00004": {
+      "frame": {
+        "x": 166,
+        "y": 413,
+        "w": 45,
+        "h": 78
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 9,
+        "w": 45,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00028": {
+      "frame": {
+        "x": 296,
+        "y": 389,
+        "w": 49,
+        "h": 78
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 7,
+        "w": 49,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00030": {
+      "frame": {
+        "x": 347,
+        "y": 382,
+        "w": 50,
+        "h": 78
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 8,
+        "w": 50,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00032": {
+      "frame": {
+        "x": 424,
+        "y": 1,
+        "w": 50,
+        "h": 78
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 8,
+        "w": 50,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00012": {
+      "frame": {
+        "x": 422,
+        "y": 83,
+        "w": 36,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 9,
+        "w": 36,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00014": {
+      "frame": {
+        "x": 378,
+        "y": 297,
+        "w": 40,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 8,
+        "w": 40,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00020": {
+      "frame": {
+        "x": 423,
+        "y": 162,
+        "w": 44,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 11,
+        "w": 44,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00022": {
+      "frame": {
+        "x": 423,
+        "y": 241,
+        "w": 47,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 12,
+        "w": 47,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00030": {
+      "frame": {
+        "x": 420,
+        "y": 320,
+        "w": 45,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 9,
+        "w": 45,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00002": {
+      "frame": {
+        "x": 399,
+        "y": 399,
+        "w": 45,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 9,
+        "w": 45,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00006": {
+      "frame": {
+        "x": 446,
+        "y": 399,
+        "w": 45,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 8,
+        "w": 45,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00016": {
+      "frame": {
+        "x": 467,
+        "y": 320,
+        "w": 44,
+        "h": 76
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 8,
+        "w": 44,
+        "h": 76
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00024": {
+      "frame": {
+        "x": 472,
+        "y": 81,
+        "w": 47,
+        "h": 76
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 12,
+        "w": 47,
+        "h": 76
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00000": {
+      "frame": {
+        "x": 472,
+        "y": 159,
+        "w": 46,
+        "h": 76
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 10,
+        "w": 46,
+        "h": 76
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00026": {
+      "frame": {
+        "x": 472,
+        "y": 237,
+        "w": 47,
+        "h": 76
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 7,
+        "w": 47,
+        "h": 76
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00018": {
+      "frame": {
+        "x": 476,
+        "y": 1,
+        "w": 44,
+        "h": 75
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 9,
+        "w": 44,
+        "h": 75
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00008": {
+      "frame": {
+        "x": 1,
+        "y": 478,
+        "w": 46,
+        "h": 75
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 8,
+        "w": 46,
+        "h": 75
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00012": {
+      "frame": {
+        "x": 166,
+        "y": 460,
+        "w": 38,
+        "h": 75
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 7,
+        "w": 38,
+        "h": 75
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00028": {
+      "frame": {
+        "x": 78,
+        "y": 470,
+        "w": 49,
+        "h": 74
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 11,
+        "w": 49,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00010": {
+      "frame": {
+        "x": 243,
+        "y": 478,
+        "w": 42,
+        "h": 74
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 8,
+        "w": 42,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00014": {
+      "frame": {
+        "x": 319,
+        "y": 469,
+        "w": 40,
+        "h": 74
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 8,
+        "w": 40,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00020": {
+      "frame": {
+        "x": 395,
+        "y": 478,
+        "w": 44,
+        "h": 74
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 9,
+        "w": 44,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00022": {
+      "frame": {
+        "x": 471,
+        "y": 478,
+        "w": 46,
+        "h": 74
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 8,
+        "w": 46,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00024": {
+      "frame": {
+        "x": 522,
+        "y": 1,
+        "w": 47,
+        "h": 74
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 7,
+        "w": 47,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_down/man02_walk_down_l_00026": {
+      "frame": {
+        "x": 522,
+        "y": 77,
+        "w": 45,
+        "h": 73
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 12,
+        "w": 45,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00016": {
+      "frame": {
+        "x": 520,
+        "y": 159,
+        "w": 44,
+        "h": 73
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 8,
+        "w": 44,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "man2/walk_up/man02_walk_up_R_00018": {
+      "frame": {
+        "x": 493,
+        "y": 398,
+        "w": 44,
+        "h": 73
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 9,
+        "w": 44,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "man2.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 570,
+      "h": 525
+    },
+    "scale": 1
+  }
+}
