@@ -6,14 +6,14 @@ import { IsometricGrid } from '@/grid/IsometricGrid'
 import * as PIXI from 'pixi.js'
 import { Ticker } from 'pixi.js'
 import { RoadManager } from '@/grid/RoadManager'
-import { Road } from '@/grid/Road'
+import { WorkerManager } from '@/workers/WorkerManager'
 
 class Game {
   protected app: PIXI.Application
   private grid!: IsometricGrid
   private buildingManager!: BuildingManager
+  private workerManager!: WorkerManager
   private roadManager!: RoadManager
-  private road!: Road
   private isRoadBuildingMode: boolean = false
 
   constructor() {
@@ -65,7 +65,9 @@ class Game {
     // Створюємо менеджер доріг (підставте правильні розміри фреймів)
     this.roadManager = new RoadManager(this.grid)
 
-    // this.road = new Road(this.grid)
+    this.workerManager = new WorkerManager(this.grid)
+
+    // this.workerManager.addWorker()
 
     this.setupInteraction()
     this.setupUI()
@@ -130,7 +132,14 @@ class Game {
           tilePos.y
         )
         if (building?.getType() === BuildingType.BARRACKS) {
-          // Додавання робітника...
+          // Знаходимо найближчу дорогу для спавну робітника
+          const spawnPoint = this.findNearestRoad(tilePos.x, tilePos.y)
+          if (spawnPoint) {
+            const worker = this.workerManager.addWorker(
+              spawnPoint.x,
+              spawnPoint.y
+            )
+          }
         }
       }
     })
@@ -150,6 +159,28 @@ class Game {
         }
       }
     })
+  }
+
+  // ! в клас сітки
+  private findNearestRoad(
+    x: number,
+    y: number
+  ): { x: number; y: number } | null {
+    // Пошук найближчої дороги по спіралі
+    const maxRadius = Math.max(this.grid.getGridSize(), this.grid.getGridSize())
+    for (let r = 1; r <= maxRadius; r++) {
+      for (let dx = -r; dx <= r; dx++) {
+        for (let dy = -r; dy <= r; dy++) {
+          const newX = x + dx
+          const newY = y + dy
+          const tile = this.grid.getTile(newX, newY)
+          if (tile?.getType() === TileType.ROAD) {
+            return { x: newX, y: newY }
+          }
+        }
+      }
+    }
+    return null
   }
 
   private setupUI(): void {
@@ -204,8 +235,8 @@ class Game {
     }
   }
 
-  private update(ticker: Ticker): void {
-    //
+  private update({ deltaTime }: Ticker): void {
+    this.workerManager.update(deltaTime)
   }
 }
 

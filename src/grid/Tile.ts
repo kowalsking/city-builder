@@ -1,16 +1,16 @@
+import { Container, Sprite, Texture } from 'pixi.js'
 import { TileType } from '@/core/types'
-import * as PIXI from 'pixi.js'
 
-export class Tile extends PIXI.Container {
+export class Tile extends Container {
   private type: TileType
-  private sprite: PIXI.Sprite
+  private sprite: Sprite
   private gridX: number
   private gridY: number
   private isOccupied: boolean = false
 
   constructor(
     type: TileType,
-    texture: PIXI.Texture,
+    texture: Texture,
     gridX: number,
     gridY: number
   ) {
@@ -19,16 +19,16 @@ export class Tile extends PIXI.Container {
     this.gridX = gridX
     this.gridY = gridY
 
-    this.sprite = new PIXI.Sprite(texture)
-    this.sprite.anchor.set(0.5, 0.5)
+    this.sprite = new Sprite(texture)
+    this.sprite.anchor.set(0.5)
 
     this.addChild(this.sprite)
   }
 
   public setOccupied(occupied: boolean): void {
     this.isOccupied = occupied
-    // Можливо, змінити вигляд тайлу при зайнятті
-    this.sprite.tint = occupied ? 0x888888 : 0xffffff
+    // for debugging
+    // this.sprite.tint = occupied ? 0x888888 : 0xffffff
   }
 
   public isOccupiedTile(): boolean {
@@ -44,7 +44,7 @@ export class Tile extends PIXI.Container {
   }
 
   // Метод для оновлення текстури (наприклад, для доріг при з'єднанні)
-  public updateTexture(texture: PIXI.Texture): void {
+  public updateTexture(texture: Texture): void {
     this.sprite.texture = texture
   }
 }

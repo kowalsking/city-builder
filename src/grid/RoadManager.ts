@@ -1,27 +1,9 @@
 import * as PIXI from 'pixi.js'
 import { AssetLoader } from '@/core/AssetLoader'
-import { TileType } from '@/core/types'
+import { RoadElements, TileType } from '@/core/types'
 import { IsometricGrid } from '@/grid/IsometricGrid'
 
-// Не найкращий неймінг х_х
-enum RoadElements {
-  NONE = 'none',
-  HORIZONTAL = 'horizontal',
-  VERTICAL = 'vertical',
-  CROSS = 'cross',
-  TOP_TURN = 'top_turn',
-  R_TOP_CROSS = 'right_top_cross',
-  V_R_TOP_END = 'vertical_right_top_end',
-  H_R_BOTTOM_END = 'horizontal_right_bottom_end',
-  V_L_BOTTOM_END = 'vertical_left_bottom_end',
-  L_BOTTOM_TURN = 'left_bottom_turn',
-  R_BOTTOM_TURN = 'right_bottom_turn',
-  L_B_CROSS = 'left_bottom_cross',
-  V_L_TOP_END = 'vertical_left_top_end',
-  BOTTOM_TURN = 'bottom_turn',
-  L_T_CROSS = 'left_top_cross',
-  R_B_CROSS = 'right_bottom_cross',
-}
+
 
 export class RoadManager {
   private grid: IsometricGrid
@@ -127,7 +109,7 @@ export class RoadManager {
 
   public placeRoad(x: number, y: number): boolean {
     const tile = this.grid.getTile(x, y)
-    if (!tile || tile.getType() === TileType.BUILDING) {
+    if (tile?.isOccupiedTile()) {
       return false
     }
 
@@ -174,7 +156,7 @@ export class RoadManager {
     }
 
     // ! засунути метод в клас сітки
-    // дорога не повинна знати про землю
+    // ! дорога не повинна знати про землю
     const groundTexture = PIXI.Assets.get('ground')
     this.grid.addTile(x, y, TileType.GROUND, groundTexture)
 

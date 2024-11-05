@@ -1,7 +1,7 @@
+import * as PIXI from 'pixi.js'
 import GameConfig from '@/core/config'
 import { TileType } from '@/core/types'
 import { Tile } from '@/grid/Tile'
-import * as PIXI from 'pixi.js'
 
 export class IsometricGrid extends PIXI.Container {
   private readonly tileWidth: number = GameConfig.TILE_SIZE
@@ -54,11 +54,9 @@ export class IsometricGrid extends PIXI.Container {
     // Встановлюємо z-index
     tile.zIndex = this.calculateTileZIndex(x, y)
 
-    
-    // Якщо це будівля, додаємо додатковий z-index
-    // if (type === TileType.BUILDING) {
-    //   tile.zIndex += this.gridSize * 2 // Щоб будівлі завжди були над землею та дорогами
-    // }
+    if (type === TileType.ROAD) {
+      tile.setOccupied(true)
+    }
 
     // Зберігаємо та відображаємо тайл
     this.tiles[y][x] = tile
@@ -156,20 +154,15 @@ export class IsometricGrid extends PIXI.Container {
     // Конвертуємо координати екрану в локальні координати сітки
     const localPos = this.toLocal(new PIXI.Point(screenX, screenY))
 
-    // Враховуємо зміщення для центру тайлу
-    const offsetX = localPos.x
-    const offsetY = localPos.y
-
-    // Використовуємо формулу для ізометричних координат
-    const cartX = (offsetX / this.tileWidth + offsetY / this.tileHeight) / 2
-    const cartY = (offsetY / this.tileHeight - offsetX / this.tileWidth) / 2
-
-    const tileX = Math.floor(cartX)
-    const tileY = Math.floor(cartY)
+    const { x, y } = this.isometricToCartesian(localPos.x, localPos.y)
+    // Визначаємо координа клітинки у сітці
+    const tileX = Math.max(0, Math.round(x))
+    const tileY = Math.max(0, Math.round(y))
 
     if (this.isInBounds(tileX, tileY)) {
       return { x: tileX, y: tileY }
     }
+
     return null
   }
 
