@@ -1,10 +1,9 @@
+import * as PIXI from 'pixi.js'
 import { ButtonConfig, ButtonNames } from '@/core/types'
 import { AssetLoader } from '@/core/AssetLoader'
 import { BuildingType } from '@/core/types'
 import { Game } from '@/main'
-import * as PIXI from 'pixi.js'
-import { FederatedPointerEvent } from 'pixi.js'
-import { Button } from './Button'
+import { Button } from '@/ui/Button'
 
 export class GameUI extends PIXI.Container {
   private buttons: Map<string, Button> = new Map()
@@ -137,7 +136,7 @@ export class GameUI extends PIXI.Container {
     return Object.values(ButtonNames).includes(value as ButtonNames)
   }
 
-  public onPointerTap({ x, y, target }: FederatedPointerEvent) {
+  public onPointerTap({ x, y, target }: PIXI.FederatedPointerEvent) {
     const grid = this.scene.grid
 
     // Запобігаємо провалюванню івента на app.stage, бо чомусь preventDefault на кнопці не хоче працювати
@@ -174,7 +173,7 @@ export class GameUI extends PIXI.Container {
     this.isDragging = false
   }
 
-  public onPointerMove({ x, y }: FederatedPointerEvent) {
+  public onPointerMove({ x, y }: PIXI.FederatedPointerEvent) {
     const tilePos = this.scene.grid.getTilePosition(x, y)
     this.scene.buildingManager.updatePreview(
       tilePos ? tilePos.x : null,
