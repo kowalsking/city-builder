@@ -19,9 +19,6 @@ export class GameUI extends PIXI.Container {
   }
 
   private async setup(): Promise<void> {
-    // Завантажуємо текстури для кнопок
-    const buttonTexture = await AssetLoader.getTexture('roadButton')
-
     // Створюємо кнопки будівництва
     const buttonsConfig: ButtonConfig[] = [
       {

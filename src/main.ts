@@ -67,7 +67,6 @@ export class Game {
 
     this.app.ticker.add(this.update.bind(this))
 
-
     if (this.isMobile()) {
       this.app.stage.scale.set(0.5)
     }
