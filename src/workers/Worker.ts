@@ -1,25 +1,29 @@
 import { AnimatedSprite, Container, Texture } from 'pixi.js'
 import GameConfig from '@/core/config'
 import { WorkerState, WorkerDirection } from '@/core/types'
+import { AssetLoader } from '@/core/AssetLoader'
 
 export class Worker extends Container {
-  private sprite: AnimatedSprite
+  private animation: AnimatedSprite
   private currentState: WorkerState = WorkerState.IDLE
   private currentDirection: WorkerDirection = WorkerDirection.DOWN
   private animations: Map<string, Texture[]> = new Map()
   private path: Array<{ x: number; y: number }> = []
   private currentPathIndex: number = 0
   private speed: number = 1
+  private animationSpeed: number = 0.2
   private isMovingFlag: boolean = false
 
-  constructor(textures: Record<string, Texture>) {
+  constructor() {
     super()
-    this.setupAnimations(textures)
+    // Хардкодимо текстури робітника
+    // Хоча краще прокидувати текстури з батьківських класів
+    this.setupAnimations(AssetLoader.getTexture('worker').textures)
     const defaultAnimation = this.animations.get('idle_down') || []
-    this.sprite = new AnimatedSprite(defaultAnimation)
-    this.sprite.anchor.set(0.5, 0.5)
-    this.sprite.y = 32
-    this.addChild(this.sprite)
+    this.animation = new AnimatedSprite(defaultAnimation)
+    this.animation.anchor.set(0.5, 1.2)
+    this.animation.y = GameConfig.TILE_SIZE / 2
+    this.addChild(this.animation)
     this.setState(WorkerState.IDLE, WorkerDirection.DOWN)
   }
 
@@ -29,11 +33,10 @@ export class Worker extends Container {
       idle_down: [],
       walk_down: [],
       walk_up: [],
-      wave_down: [],
     }
 
+    // Визначаємо, до якої анімації належить текстура
     Object.keys(textures).forEach((name) => {
-      // Визначаємо, до якої анімації належить текстура
       Object.keys(frameMap).forEach((key) => {
         if (name.includes(key)) {
           frameMap[key].push(textures[name])
@@ -53,34 +56,22 @@ export class Worker extends Container {
   }
 
   public setState(state: WorkerState, direction: WorkerDirection): void {
-    const animationKey = `${state}_${direction.toLowerCase()}`
+    const animationKey =
+      state === WorkerState.IDLE
+        ? 'idle_down'
+        : `${state}_${direction.toLowerCase()}`
     const frames = this.animations.get(animationKey)
-
     if (
       frames?.length &&
       (this.currentState !== state || this.currentDirection !== direction)
     ) {
       this.currentState = state
       this.currentDirection = direction
-      this.sprite.textures = frames
+      this.animation.textures = frames
 
-      // Налаштовуємо швидкість анімації
-      this.sprite.animationSpeed = 0.2
-
-      if (state === WorkerState.IDLE) {
-        this.sprite.play()
-        this.isMovingFlag = false
-      } else if (state === WorkerState.WALKING) {
-        this.sprite.play()
-        this.isMovingFlag = true
-      } else if (state === WorkerState.WAVING) {
-        this.sprite.loop = false
-        this.sprite.play()
-        this.isMovingFlag = false
-        this.sprite.onComplete = () => {
-          this.setState(WorkerState.IDLE, direction)
-        }
-      }
+      this.animation.animationSpeed = this.animationSpeed
+      this.animation.play()
+      this.isMovingFlag = state === WorkerState.WALKING
     }
   }
 
@@ -103,11 +94,23 @@ export class Worker extends Container {
     const dx = next.x - current.x
     const dy = next.y - current.y
 
-    // Визначаємо напрямок на основі переважаючого руху
-    if (Math.abs(dy) > Math.abs(dx)) {
-      return dy < 0 ? WorkerDirection.UP : WorkerDirection.DOWN
+    // Визначаємо напрямок руху
+    if (dy === -1 && dx === 0) {
+      // right top
+      this.scale.x = 1 // Змінюємо поворот анімації в залежності від напрямку
+      return WorkerDirection.UP
+    } else if (dy === 1 && dx === 0) {
+      // left down
+      this.scale.x = 1
+      return WorkerDirection.DOWN
+    } else if (dy === 0 && dx === 1) {
+      // right down
+      this.scale.x = -1
+      return WorkerDirection.DOWN
     } else {
-      return WorkerDirection.DOWN // Для бокового руху використовуємо DOWN
+      // (dy === 0 && dx === -1) left top
+      this.scale.x = -1
+      return WorkerDirection.UP
     }
   }
 
@@ -123,8 +126,8 @@ export class Worker extends Container {
     const iso = this.cartesianToIsometric(targetPoint.x, targetPoint.y)
 
     // Розраховуємо відстань до цільової точки
-    const dx = iso.x - this.position.x
-    const dy = iso.y - this.position.y
+    const dx = iso.x * 2 - this.position.x
+    const dy = iso.y * 2 - this.position.y
     const distance = Math.sqrt(dx * dx + dy * dy)
 
     if (distance < this.speed) {
@@ -151,9 +154,5 @@ export class Worker extends Container {
 
   public isMoving(): boolean {
     return this.isMovingFlag
-  }
-
-  public wave(): void {
-    this.setState(WorkerState.WAVING, WorkerDirection.DOWN)
   }
 }

@@ -1,15 +1,16 @@
+import { Graphics, Container, Assets } from 'pixi.js'
 import { Building } from '@/buildings/Building'
 import { BUILDINGS_CONFIG } from '@/buildings/BuildingConfig'
+import { AssetLoader } from '@/core/AssetLoader'
 import { BuildingType } from '@/core/types'
 import { IsometricGrid } from '@/grid/IsometricGrid'
-import * as PIXI from 'pixi.js'
 
 export class BuildingManager {
   private grid: IsometricGrid
   private buildings: Building[] = []
-  private highlights: PIXI.Graphics[] = []
+  private highlights: Graphics[] = []
   private selectedBuildingType: BuildingType | null = null
-  private previewBuilding: PIXI.Container | null = null
+  private previewBuilding: Container | null = null
 
   constructor(grid: IsometricGrid) {
     this.grid = grid
@@ -50,7 +51,7 @@ export class BuildingManager {
   public updatePreview(gridX: number | null, gridY: number | null): void {
     // Видаляємо попередній preview і підсвічування
     this.grid.children.forEach((child) => {
-      if (child instanceof PIXI.Graphics) {
+      if (child instanceof Graphics) {
         this.grid.removeChild(child)
       }
     })
@@ -64,7 +65,7 @@ export class BuildingManager {
     }
 
     const config = BUILDINGS_CONFIG[this.selectedBuildingType]
-    const texture = PIXI.Assets.get(config.texture)
+    const texture = Assets.get(config.texture)
     const preview = new Building(
       this.selectedBuildingType,
       texture,
@@ -108,7 +109,7 @@ export class BuildingManager {
     }
 
     const config = BUILDINGS_CONFIG[this.selectedBuildingType]
-    const texture = PIXI.Assets.get(config.texture)
+    const texture = Assets.get(config.texture)
     const building = new Building(
       this.selectedBuildingType,
       texture,
@@ -148,7 +149,7 @@ export class BuildingManager {
       for (let dx = 0; dx < width; dx++) {
         const tile = this.grid.getTile(x + dx, y + dy)
         if (tile) {
-          const highlight = new PIXI.Graphics()
+          const highlight = new Graphics()
           highlight.beginFill(color, 0.3)
           highlight.drawRect(
             -this.grid.getTileSize().width / 2,
@@ -172,6 +173,8 @@ export class BuildingManager {
   // Видаляє всі будівлі
   public removeAllBuildings(): void {
     for (const building of this.buildings) {
+      // Пропускаємо першу будівлю (за умовами завдання)
+      if (building === this.buildings[0]) continue
       this.grid.removeChild(building)
 
       // Відновлюємо початкові тайли
@@ -183,7 +186,7 @@ export class BuildingManager {
           const tile = this.grid.getTile(x, y)
           if (tile) {
             // Повертаємо початкову текстуру землі
-            const groundTexture = PIXI.Assets.get('ground')
+            const groundTexture = AssetLoader.getTexture('ground')
             tile.updateTexture(groundTexture)
             tile.setOccupied(false)
           }
@@ -196,6 +199,6 @@ export class BuildingManager {
     }
 
     this.highlights = []
-    this.buildings = []
+    this.buildings.length = 1
   }
 }

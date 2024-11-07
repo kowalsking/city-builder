@@ -44,7 +44,6 @@ export enum RoadElements {
 export enum WorkerState {
   IDLE = 'idle',
   WALKING = 'walk',
-  WAVING = 'wave',
 }
 
 export enum WorkerDirection {
@@ -52,9 +51,28 @@ export enum WorkerDirection {
   DOWN = 'down',
 }
 
-export enum WorkerAnimationName {
-  IDLE = 'idle_down',
-  WALK_DOWN = 'walk_down',
-  WALK_UP = 'walk_up',
-  WAVE_DOWN = 'wave_down'
+/**
+ * UI
+ */
+
+export enum ButtonNames {
+  COALMINE = 'Coalmine',
+  BARRACKS = 'Barracks',
+  SENAT = 'Senate',
+  ROAD = 'Road',
+  RESET = 'Reset',
+}
+
+export type ButtonTexturesNames =
+  | 'coalmine'
+  | 'barracks'
+  | 'senat'
+  | 'roadButton'
+  | 'reset'
+
+export type ButtonConfig = {
+  id: ButtonNames
+  name: ButtonNames
+  type: BuildingType | ButtonNames
+  texture: ButtonTexturesNames
 }

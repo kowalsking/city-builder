@@ -1,3 +1,4 @@
+import GameConfig from '@/core/config'
 import { PathNode } from '@/core/pathfinding/PathNode'
 import { TileType } from '@/core/types'
 import { IsometricGrid } from '@/grid/IsometricGrid'
@@ -42,6 +43,12 @@ export class AStar {
           path.push({ x: current.x, y: current.y })
           current = current.parent!
         }
+
+        if (GameConfig.debugMode) {
+          path.forEach(({ x, y }) => {
+            this.grid.getTile(x, y)!.tint = 0xff0000
+          })
+        }
         return path.reverse()
       }
 
@@ -64,11 +71,7 @@ export class AStar {
 
       for (const neighbor of neighbors) {
         // Пропускаємо якщо вузол вже в закритому списку
-        if (
-          closedList.find(
-            (node) => node.x === neighbor.x && node.y === neighbor.y
-          )
-        ) {
+        if (neighbor.isInList(closedList)) {
           continue
         }
 
@@ -77,12 +80,8 @@ export class AStar {
         neighbor.f = neighbor.g + neighbor.h
         neighbor.parent = currentNode
 
-        // Додаємо до відкритого списку якщо ще не там
-        if (
-          !openList.find(
-            (node) => node.x === neighbor.x && node.y === neighbor.y
-          )
-        ) {
+        // Додаємо до відкритого списку
+        if (!neighbor.isInList(openList)) {
           openList.push(neighbor)
         }
       }

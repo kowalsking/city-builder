@@ -1,11 +1,11 @@
+import { Container, Sprite, Texture } from 'pixi.js'
 import GameConfig from '@/core/config'
-import * as PIXI from 'pixi.js'
 import { BuildingType } from '@/core/types'
 import { BuildingConfig, BUILDINGS_CONFIG } from '@/buildings/BuildingConfig'
 
-export class Building extends PIXI.Container {
+export class Building extends Container {
   private type: BuildingType
-  private sprite: PIXI.Sprite
+  private sprite: Sprite
   private gridX: number
   private gridY: number
   private config: BuildingConfig
@@ -13,7 +13,7 @@ export class Building extends PIXI.Container {
 
   constructor(
     type: BuildingType,
-    texture: PIXI.Texture,
+    texture: Texture,
     gridX: number,
     gridY: number,
     tileSize: { width: number; height: number }
@@ -25,7 +25,7 @@ export class Building extends PIXI.Container {
     this.config = BUILDINGS_CONFIG[type]
     this.tileSize = tileSize
 
-    this.sprite = new PIXI.Sprite(texture)
+    this.sprite = new Sprite(texture)
     this.sprite.anchor.set(0.5, 0.5)
     this.scaleSprite()
     this.addChild(this.sprite)

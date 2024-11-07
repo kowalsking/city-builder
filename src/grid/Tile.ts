@@ -8,12 +8,7 @@ export class Tile extends Container {
   private gridY: number
   private isOccupied: boolean = false
 
-  constructor(
-    type: TileType,
-    texture: Texture,
-    gridX: number,
-    gridY: number
-  ) {
+  constructor(type: TileType, texture: Texture, gridX: number, gridY: number) {
     super()
     this.type = type
     this.gridX = gridX
@@ -27,8 +22,6 @@ export class Tile extends Container {
 
   public setOccupied(occupied: boolean): void {
     this.isOccupied = occupied
-    // for debugging
-    // this.sprite.tint = occupied ? 0x888888 : 0xffffff
   }
 
   public isOccupiedTile(): boolean {
@@ -43,7 +36,6 @@ export class Tile extends Container {
     return this.type
   }
 
-  // Метод для оновлення текстури (наприклад, для доріг при з'єднанні)
   public updateTexture(texture: Texture): void {
     this.sprite.texture = texture
   }

@@ -1,9 +1,10 @@
-import * as PIXI from 'pixi.js'
 import GameConfig from '@/core/config'
 import { TileType } from '@/core/types'
 import { Tile } from '@/grid/Tile'
+import { AssetLoader } from '@/core/AssetLoader'
+import { Container, Point, Texture } from 'pixi.js'
 
-export class IsometricGrid extends PIXI.Container {
+export class IsometricGrid extends Container {
   private readonly tileWidth: number = GameConfig.TILE_SIZE
   private readonly tileHeight: number = this.tileWidth / 2
   private readonly gridSize: number
@@ -24,8 +25,16 @@ export class IsometricGrid extends PIXI.Container {
 
     this.sortableChildren = true
 
-    // ! delete if needed
-    // this.updateZIndices()
+    // Хардкодимо текстуру підлоги
+    this.fillWithGround()
+  }
+
+  private fillWithGround() {
+    for (let y = 0; y < this.getGridSize(); y++) {
+      for (let x = 0; x < this.getGridSize(); x++) {
+        this.addTile(x, y, TileType.GROUND, AssetLoader.getTexture('ground'))
+      }
+    }
   }
 
   // Метод для додавання тайлу на сітку
@@ -33,7 +42,7 @@ export class IsometricGrid extends PIXI.Container {
     x: number,
     y: number,
     type: TileType,
-    texture: PIXI.Texture
+    texture: Texture
   ): Tile | any {
     if (!this.isInBounds(x, y)) {
       return null
@@ -90,6 +99,7 @@ export class IsometricGrid extends PIXI.Container {
     // Перетворюємо координати відносно центру тайлу
     const cartX = (2 * isoY + isoX) / (2 * this.tileWidth)
     const cartY = (2 * isoY - isoX) / (2 * this.tileWidth)
+
     return { x: Math.floor(cartX), y: Math.floor(cartY) }
   }
 
@@ -107,22 +117,6 @@ export class IsometricGrid extends PIXI.Container {
     return x >= 0 && x < this.gridSize && y >= 0 && y < this.gridSize
   }
 
-  // ! delete if needed
-  // Метод для оновлення z-індексів усіх тайлів
-  public updateZIndices(): void {
-    for (let y = 0; y < this.gridSize; y++) {
-      for (let x = 0; x < this.gridSize; x++) {
-        const tile = this.tiles[y][x]
-        if (tile) {
-          tile.zIndex = this.calculateZIndex(x, y)
-          if (tile.getType() === TileType.BUILDING) {
-            tile.zIndex += this.gridSize * 2
-          }
-        }
-      }
-    }
-  }
-
   private calculateTileZIndex(x: number, y: number): number {
     return IsometricGrid.BASE_TILE_Z_INDEX + x + y
   }
@@ -137,22 +131,12 @@ export class IsometricGrid extends PIXI.Container {
     return IsometricGrid.PREVIEW_Z_INDEX
   }
 
-  // ! delete if needed
-  // Метод для обчислення z-index тайлу на основі його позиції
-  private calculateZIndex(x: number, y: number): number {
-    // Формула: z = x + y
-    // Це забезпечує, що тайли, які знаходяться "далі" (більші x та y),
-    // матимуть менший z-index і будуть відображатися під тайлами,
-    // що знаходяться "ближче" (менші x та y)
-    return x + y
-  }
-
   public getTilePosition(
     screenX: number,
     screenY: number
   ): { x: number; y: number } | null {
     // Конвертуємо координати екрану в локальні координати сітки
-    const localPos = this.toLocal(new PIXI.Point(screenX, screenY))
+    const localPos = this.toLocal(new Point(screenX, screenY))
 
     const { x, y } = this.isometricToCartesian(localPos.x, localPos.y)
     // Визначаємо координа клітинки у сітці
@@ -164,6 +148,29 @@ export class IsometricGrid extends PIXI.Container {
     }
 
     return null
+  }
+
+  public getRoadTiles() {
+    const roadTiles = []
+    // Знаходимо всі доступні дороги
+    for (let y = 0; y < this.getGridSize(); y++) {
+      for (let x = 0; x < this.getGridSize(); x++) {
+        const tile = this.getTile(x, y)
+        if (tile?.getType() === TileType.ROAD) {
+          roadTiles.push({ x, y })
+        }
+      }
+    }
+
+    return roadTiles
+  }
+
+  public centerGrid(width: number, height: number) {
+    const { x, y } = {
+      x: width / 2,
+      y: height / 2,
+    }
+    this.position.set(x, y)
   }
 
   public getGridSize(): number {

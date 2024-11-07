@@ -1,18 +1,19 @@
-import * as PIXI from 'pixi.js'
+import { Rectangle, Texture } from 'pixi.js'
+import GameConfig from '@/core/config'
 import { AssetLoader } from '@/core/AssetLoader'
 import { RoadElements, TileType } from '@/core/types'
 import { IsometricGrid } from '@/grid/IsometricGrid'
 
-
-
 export class RoadManager {
   private grid: IsometricGrid
-  protected roadTexture = AssetLoader.getTexture('road')
-  protected roadTextureCount = { x: 6, y: 3 }
-  protected roadTileSize = {
+  private roadTexture = AssetLoader.getTexture('road')
+  private roadTextureCount = { x: 6, y: 3 }
+  private roadTileSize = {
     width: this.roadTexture.width / this.roadTextureCount.x,
     height: this.roadTexture.height / this.roadTextureCount.y,
   }
+  public isRoadBuildingMode: boolean = false
+  private roadTilesPosition: number[][] = []
 
   private readonly frames: Record<RoadElements, [number, number]> = {
     [RoadElements.HORIZONTAL]: [0, 0],
@@ -37,9 +38,9 @@ export class RoadManager {
     this.grid = grid
   }
 
-  private getRoadFrame(direction: RoadElements): PIXI.Rectangle {
+  private getRoadFrame(direction: RoadElements): Rectangle {
     const [x, y] = this.frames[direction]
-    return new PIXI.Rectangle(
+    return new Rectangle(
       x * this.roadTileSize.width,
       y * this.roadTileSize.height,
       this.roadTileSize.width,
@@ -102,9 +103,9 @@ export class RoadManager {
     return RoadElements.V_R_TOP_END // Обираємо будь-який кінцевий фрейм дороги, як перший
   }
 
-  private getRoadTexture(direction: RoadElements): PIXI.Texture {
+  private getRoadTexture(direction: RoadElements): Texture {
     const frame = this.getRoadFrame(direction)
-    return new PIXI.Texture({ source: this.roadTexture.baseTexture, frame })
+    return new Texture({ source: this.roadTexture.baseTexture, frame })
   }
 
   public placeRoad(x: number, y: number): boolean {
@@ -118,7 +119,7 @@ export class RoadManager {
     const roadTexture = this.getRoadTexture(direction)
 
     this.grid.addTile(x, y, TileType.ROAD, roadTexture)
-
+    this.roadTilesPosition.push([x, y])
     // Оновлюємо сусідні дороги
     this.updateNeighboringRoads(x, y)
 
@@ -149,15 +150,27 @@ export class RoadManager {
     }
   }
 
+  public removeAllRoads() {
+    this.roadTilesPosition.forEach(([x, y]) => {
+      if (
+        GameConfig.UNTOUCHABLE_ROAD.find(
+          ([roadX, roadY]) => roadX === x && roadY === y
+        )
+      ) {
+        return
+      }
+      this.removeRoad(x, y)
+    })
+    this.roadTilesPosition = []
+  }
+
   public removeRoad(x: number, y: number): boolean {
     const tile = this.grid.getTile(x, y)
     if (!tile || tile.getType() !== TileType.ROAD) {
       return false
     }
 
-    // ! засунути метод в клас сітки
-    // ! дорога не повинна знати про землю
-    const groundTexture = PIXI.Assets.get('ground')
+    const groundTexture = AssetLoader.getTexture('ground')
     this.grid.addTile(x, y, TileType.GROUND, groundTexture)
 
     this.updateNeighboringRoads(x, y)

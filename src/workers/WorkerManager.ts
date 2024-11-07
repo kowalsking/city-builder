@@ -1,25 +1,20 @@
 import { IsometricGrid } from '@/grid/IsometricGrid'
-import { Texture } from 'pixi.js'
 import { Worker } from '@/workers/Worker'
-import { AssetLoader } from '@/core/AssetLoader'
 import { AStar } from '@/core/pathfinding/AStar'
-import { TileType } from '@/core/types'
 
 export class WorkerManager {
   private workers: Worker[] = []
   private pathfinder: AStar
   private grid: IsometricGrid
+  private roadTiles: Array<{ x: number; y: number }> = []
 
   constructor(grid: IsometricGrid) {
     this.grid = grid
     this.pathfinder = new AStar(grid)
   }
 
-  public addWorker(
-    startX: number,
-    startY: number
-  ): Worker {
-    const worker = new Worker(AssetLoader.getTexture('worker').textures)
+  public addWorker(startX: number, startY: number): Worker {
+    const worker = new Worker()
 
     // Встановлюємо початкову позицію
     const isoPos = this.grid.cartesianToIsometric(startX, startY)
@@ -42,22 +37,12 @@ export class WorkerManager {
     startX: number,
     startY: number
   ): Promise<void> {
-    // Знаходимо всі доступні дороги
-    const roadTiles: Array<{ x: number; y: number }> = []
-    for (let y = 0; y < this.grid.getGridSize(); y++) {
-      for (let x = 0; x < this.grid.getGridSize(); x++) {
-        const tile = this.grid.getTile(x, y)
-        if (tile?.getType() === TileType.ROAD) {
-          roadTiles.push({ x, y })
-        }
-      }
-    }
-
-    console.log('this.roadTiles', roadTiles)
+    this.roadTiles = this.grid.getRoadTiles()
 
     while (true) {
       // Вибираємо випадкову точку призначення з доріг
-      const target = roadTiles[Math.floor(Math.random() * roadTiles.length)]
+      const target =
+        this.roadTiles[Math.floor(Math.random() * this.roadTiles.length)]
 
       // Знаходимо шлях
       const path = this.pathfinder.findPath(startX, startY, target.x, target.y)
@@ -75,7 +60,7 @@ export class WorkerManager {
       }
 
       // Невелика пауза між маршрутами
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      await new Promise((resolve) => setTimeout(resolve, 3000))
     }
   }
 
@@ -83,6 +68,8 @@ export class WorkerManager {
     return new Promise((resolve) => {
       const checkInterval = setInterval(() => {
         if (!worker.isMoving()) {
+          // Поки ми ходити, могли побудуватись нові дороги, тому оновлюємо цей список перед кожним маршрутом
+          this.roadTiles = this.grid.getRoadTiles()
           clearInterval(checkInterval)
           resolve()
         }
@@ -108,9 +95,10 @@ export class WorkerManager {
   }
 
   public removeAllWorkers(): void {
-    this.workers.forEach((worker) => {
+    this.workers.forEach((worker, idx) => {
+      if (idx === 0) return
       this.grid.removeChild(worker)
     })
-    this.workers = []
+    this.workers.length = 1
   }
 }
