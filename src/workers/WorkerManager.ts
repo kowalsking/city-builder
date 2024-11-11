@@ -20,7 +20,7 @@ export class WorkerManager {
     const isoPos = this.grid.cartesianToIsometric(startX, startY)
     worker.position.set(isoPos.x, isoPos.y)
 
-    // Встановлюємо правильний z-index
+    // Встановлюємо z-index
     worker.zIndex = this.grid.getBuildingZIndex(startX, startY) + 1
 
     this.workers.push(worker)

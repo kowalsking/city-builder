@@ -4,13 +4,12 @@ export class Button extends PIXI.Container {
   private sprite: PIXI.Sprite
   private buttonLabel: PIXI.Text
   private isPressed: boolean = false
+  private onClick: () => void
 
-  constructor(
-    texture: PIXI.Texture,
-    text: string,
-    private onClick: () => void
-  ) {
+  constructor(texture: PIXI.Texture, text: string, onClick: () => void) {
     super()
+
+    this.onClick = onClick
 
     // Створюємо спрайт кнопки
     this.sprite = new PIXI.Sprite(texture)
@@ -69,5 +68,9 @@ export class Button extends PIXI.Container {
 
   public setEnabled(enabled: boolean): void {
     this.sprite.alpha = enabled ? 1 : 0.5
+  }
+
+  public isEnabled(): boolean {
+    return this.sprite.alpha === 1
   }
 }

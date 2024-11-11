@@ -51,11 +51,8 @@ export class BuildingManager {
 
   public updatePreview(gridX: number | null, gridY: number | null): void {
     // Видаляємо попередній preview і підсвічування
-    this.grid.children.forEach((child) => {
-      if (child instanceof Graphics) {
-        this.grid.removeChild(child)
-      }
-    })
+    this.removePreview()
+
     if (this.previewBuilding) {
       this.grid.removeChild(this.previewBuilding)
       this.previewBuilding = null
@@ -90,7 +87,6 @@ export class BuildingManager {
     this.previewBuilding = preview
     this.grid.addChild(preview)
 
-
     if (GameConfig.debugMode) {
       // Показуємо зайняті клітинки при перегляді
       this.showOccupiedTiles(
@@ -103,7 +99,6 @@ export class BuildingManager {
     }
   }
 
-  // Оновлюємо метод placeBuilding
   public placeBuilding(gridX: number, gridY: number): Building | null {
     if (
       !this.selectedBuildingType ||
@@ -124,7 +119,7 @@ export class BuildingManager {
 
     const iso = this.grid.cartesianToIsometric(gridX, gridY)
     building.position.set(iso.x, iso.y)
-    building.zIndex = this.grid.getBuildingZIndex(gridX, gridY)
+    building.zIndex = this.grid.getBuildingZIndex(gridX + config.width, gridY)
 
     // Позначаємо всі зайняті клітинки
     for (let y = gridY; y < gridY + config.height; y++) {
@@ -135,6 +130,8 @@ export class BuildingManager {
         }
       }
     }
+
+    this.removePreview()
 
     this.buildings.push(building)
     this.grid.addChild(building)
@@ -172,6 +169,13 @@ export class BuildingManager {
         }
       }
     }
+  }
+
+  private removePreview(): void {
+    this.highlights.forEach((hl) => {
+      hl.destroy()
+    })
+    this.highlights = []
   }
 
   // Видаляє всі будівлі

@@ -84,7 +84,7 @@ export class GameUI extends Container {
 
   private onBuildingButtonClick(button: Button, type: BuildingType): void {
     this.scene.roadManager.isRoadBuildingMode = false
-    const isBuildingButton = this.selectedButton === button
+    const isBuildingButton = this.selectedButton === button && !button.isEnabled()
     this.selectedButton = isBuildingButton ? null : button
     this.onBuildingSelect(isBuildingButton ? null : type)
     this.activateAllButtons()
@@ -151,6 +151,7 @@ export class GameUI extends Container {
     } else {
       // Ставимо будівлю
       const building = buildingManager.placeBuilding(tilePos.x, tilePos.y)
+      buildingManager.updatePreview(tilePos.x, tilePos.y)
       if (!building) return
       // Прибираємо прев'ю
       this.scene.buildingManager.selectBuildingType(null)
