@@ -1,11 +1,11 @@
-import * as PIXI from 'pixi.js'
+import { Container, FederatedPointerEvent } from 'pixi.js'
 import { ButtonConfig, ButtonNames } from '@/core/types'
 import { AssetLoader } from '@/core/AssetLoader'
 import { BuildingType } from '@/core/types'
 import { Game } from '@/main'
 import { Button } from '@/ui/Button'
 
-export class GameUI extends PIXI.Container {
+export class GameUI extends Container {
   private buttons: Map<string, Button> = new Map()
   private selectedButton: Button | null = null
   private scene: Game
@@ -136,7 +136,7 @@ export class GameUI extends PIXI.Container {
     return Object.values(ButtonNames).includes(value as ButtonNames)
   }
 
-  public onPointerTap({ x, y, target }: PIXI.FederatedPointerEvent) {
+  public onPointerTap({ x, y, target }: FederatedPointerEvent) {
     const grid = this.scene.grid
 
     // Запобігаємо провалюванню івента на app.stage, бо чомусь preventDefault на кнопці не хоче працювати
@@ -173,7 +173,7 @@ export class GameUI extends PIXI.Container {
     this.isDragging = false
   }
 
-  public onPointerMove({ x, y }: PIXI.FederatedPointerEvent) {
+  public onPointerMove({ x, y }: FederatedPointerEvent) {
     const tilePos = this.scene.grid.getTilePosition(x, y)
     this.scene.buildingManager.updatePreview(
       tilePos ? tilePos.x : null,
@@ -181,7 +181,6 @@ export class GameUI extends PIXI.Container {
     )
 
     if (this.isDragging && this.scene.roadManager.isRoadBuildingMode) {
-      const tilePos = this.scene.grid.getTilePosition(x, y)
       if (tilePos) {
         this.scene.roadManager.placeRoad(tilePos.x, tilePos.y)
       }

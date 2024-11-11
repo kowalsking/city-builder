@@ -4,6 +4,7 @@ import { BUILDINGS_CONFIG } from '@/buildings/BuildingConfig'
 import { AssetLoader } from '@/core/AssetLoader'
 import { BuildingType } from '@/core/types'
 import { IsometricGrid } from '@/grid/IsometricGrid'
+import GameConfig from '@/core/config'
 
 export class BuildingManager {
   private grid: IsometricGrid
@@ -89,14 +90,17 @@ export class BuildingManager {
     this.previewBuilding = preview
     this.grid.addChild(preview)
 
-    // Показуємо зайняті клітинки при перегляді
-    this.showOccupiedTiles(
-      gridX,
-      gridY,
-      config.width,
-      config.height,
-      canPlace ? 0x00ff00 : 0xff0000
-    )
+
+    if (GameConfig.debugMode) {
+      // Показуємо зайняті клітинки при перегляді
+      this.showOccupiedTiles(
+        gridX,
+        gridY,
+        config.width,
+        config.height,
+        canPlace ? 0x00ff00 : 0xff0000
+      )
+    }
   }
 
   // Оновлюємо метод placeBuilding

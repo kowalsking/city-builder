@@ -100,7 +100,10 @@ export class IsometricGrid extends Container {
     const cartX = (2 * isoY + isoX) / (2 * this.tileWidth)
     const cartY = (2 * isoY - isoX) / (2 * this.tileWidth)
 
-    return { x: Math.floor(cartX), y: Math.floor(cartY) }
+    return {
+      x: Math.max(0, Math.round(cartX)),
+      y: Math.max(0, Math.round(cartY)),
+    }
   }
 
   // Оновлений метод картезіанських координат в ізометричні
